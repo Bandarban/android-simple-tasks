@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">lab2</string>
+    <string name="button_text">Go!</string>
+    <string name="text_area_default">Ваш комментарий</string>
+    <string name="like">Like</string>
+    <string name="dislike">Dislike</string>
+</resources>
