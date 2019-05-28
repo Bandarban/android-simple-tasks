@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">lab5</string>
+    <string name="find">Найти</string>
+    <string name="add">Добавить</string>
+    <string name="word">Слово</string>
+    <string name="translation">Перевод</string>
+    <string name="wordType">Часть речи</string>
+</resources>
