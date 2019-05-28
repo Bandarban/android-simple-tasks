@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">lab3</string>
+    <string name="start_button">Start</string>
+    <string name="stop_button">Stop</string>
+    <string name="restart_button">Restart</string>
+    <string name="default_number">00</string>
+</resources>
