@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Lab6</string>
+    <string name="feed">Покормить</string>
+    <string name="water">Попоить</string>
+</resources>
