@@ -4,8 +4,17 @@
              android:layout_width="match_parent"
              android:layout_height="match_parent"
              tools:context=".Images">
-    <ImageView
-            android:src="@drawable/ic_launcher_background"
+    <LinearLayout
+            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" android:id="@+id/imageView"/>
+            android:layout_height="match_parent">
+        <TextView
+                android:text="TextView"
+                android:layout_width="match_parent"
+                android:layout_height="157dp" android:id="@+id/textView" android:gravity="center"/>
+        <ImageView
+                android:src="@drawable/ic_launcher_background"
+                android:layout_width="match_parent"
+                android:layout_height="246dp" android:id="@+id/imageView"/>
+    </LinearLayout>
 </FrameLayout>
