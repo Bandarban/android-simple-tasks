@@ -2,6 +2,7 @@ package com.example.lab6
 
 import android.annotation.SuppressLint
 import android.app.IntentService
+import android.app.Service
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
@@ -27,7 +28,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         button = findViewById(R.id.button)
         button2 = findViewById(R.id.button2)
-        val intent = Intent(this, BackgroundIntendService::class.java)
+        val intent = Intent(this, MyService::class.java)
         startService(intent)
 
     }
@@ -42,45 +43,4 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-}
-
-class BackgroundIntendService : IntentService(BackgroundIntendService::class.simpleName) {
-    val handler = Handler()
-    private lateinit var runnable: Runnable
-
-    override fun onHandleIntent(workIntent: Intent) {
-        // Gets data from the incoming Intent
-        val dataString = workIntent.dataString
-        // Do work here, based on the contents of dataString
-        runnable = Runnable {
-            if (isHungry or isDegedrated) {
-                isDead = true
-                var builder = NotificationCompat.Builder(this, "100000")
-                    .setSmallIcon(R.drawable.notification_icon_background)
-                    .setContentTitle("ЖИВОТНОЕ ПОГИБЛО")
-                    .setContentText("ТЫ ПОГУБИЛ ЖИВОТНОЕ, ЖИВОТНОЕ!")
-                    .setPriority(NotificationCompat.PRIORITY_DEFAULT)
-                with(NotificationManagerCompat.from(this)) {
-                    // notificationId is a unique int for each notification that you must define
-                    notify(100000, builder.build())
-                }
-            } else {
-                isHungry = true
-                isDegedrated = true
-                var builder = NotificationCompat.Builder(this, "20000")
-                    .setSmallIcon(R.drawable.notification_icon_background)
-                    .setContentTitle("ЖИВОТНОЕ ТРЕБУЕТ ТВОЕГО ВНИМАНИЯ")
-                    .setContentText("Дай воды и еды животному, не будь животным!")
-                    .setPriority(NotificationCompat.PRIORITY_DEFAULT)
-                with(NotificationManagerCompat.from(this)) {
-                    // notificationId is a unique int for each notification that you must define
-                    notify(20000, builder.build())
-                }
-            }
-
-            handler.postDelayed(runnable, 10000)
-        }
-        handler.postDelayed(runnable, 10000)
-
-    }
 }
