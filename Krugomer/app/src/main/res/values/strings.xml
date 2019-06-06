@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Krugomer</string>
+    <string name="button_default">Начать запись</string>
+    <string name="text_default">Нажмите на кнопку, чтобы начать записывать маршрут</string>
+</resources>
